@@ -1,9 +1,15 @@
-package targetsoftware;
+package runnableClasses;
+
+import baseClasses.Train;
 
 import java.util.Scanner;
 
 public class TrainUI{
         public static void main(String args[]) {
+
+            int hourToRead;
+            int minuteToRead;
+            String ticketType;
 
             while ( true ) {
 
@@ -12,17 +18,17 @@ public class TrainUI{
                 System.out.println("TYPE -1 IN THE Hour to EXIT");
 
                 System.out.println("Hour of your train: ");
-                int hourToRead = in.nextInt();
+                hourToRead = in.nextInt();
 
                 if(hourToRead == -1)
                     break;
 
                 System.out.println("Minute of your train: ");
-                int minuteToRead = in.nextInt();
+                minuteToRead = in.nextInt();
 
                 Train train = new Train(hourToRead, minuteToRead);
 
-                String ticketType = "Full price ticket";
+                ticketType = "Full price ticket";
 
                 if (train.isDiscount()) {
                     ticketType = ("Discount ticket");

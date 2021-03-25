@@ -1,4 +1,4 @@
-package targetsoftware;
+package baseClasses;
 
 public class DrinkVendingMachine {
 }
