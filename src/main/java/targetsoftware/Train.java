@@ -5,6 +5,22 @@ public class Train {
     int hour;
     int minute;
 
+    public int getHour() {
+        return hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
+    }
+
     public Train(int hour, int minute) {
 
         if ((hour < 0) || (hour > 23)) {
@@ -17,24 +33,24 @@ public class Train {
             minute = 0;
         }
 
-        this.hour = hour;
-        this.minute = minute;
+        setHour(hour);
+        setMinute(minute);
     }
 
     public boolean isDiscount() {
-        if ((hour == 9) && (minute < 30))
+        if ((getHour() == 9) && (getMinute() < 30))
             return false;
 
-        if ((hour >= 0) && (hour < 9))
+        if ((getHour() >= 0) && (getHour() < 9))
             return false;
 
-        if ((hour == 16) && (minute >= 1))
+        if ((getHour() == 16) && (getMinute() >= 1))
             return false;
 
-        if ((hour > 16) && (hour <= 18))
+        if ((getHour() > 16) && (getHour() <= 18))
             return false;
 
-        if ((hour == 19) && (minute <=30))
+        if ((getHour() == 19) && (getMinute() <=30))
             return false;
 
         //discount
